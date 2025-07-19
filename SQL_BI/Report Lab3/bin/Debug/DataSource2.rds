@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DataSource2">
+  <ConnectionProperties>
+    <Extension>OLEDB-MD</Extension>
+    <ConnectString>Data Source=.;Initial Catalog="Multidimensional lab2"</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>4cfe3a21-fb99-4718-81b0-554bf4c5273d</DataSourceID>
+</RptDataSource>

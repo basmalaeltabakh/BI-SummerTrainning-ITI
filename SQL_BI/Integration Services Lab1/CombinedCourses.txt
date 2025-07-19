@@ -1,0 +1,5 @@
+Crs_Id,Crs_Name,Crs_Duration,Top_Name,Crs_Name_lower
+100,HTML,20,Web,html
+1200,Photoshop,30,Design,photoshop
+700,Web Service,20,Web,web service
+1100,Win_XP,20,Operating System,win_xp

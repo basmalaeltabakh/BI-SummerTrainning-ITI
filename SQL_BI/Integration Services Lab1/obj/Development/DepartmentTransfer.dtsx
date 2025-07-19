@@ -1,0 +1,648 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/15/2025 12:10:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BASMALA"
+  DTS:CreatorName="BASMALA\Basmala"
+  DTS:DTSID="{1E80FB24-CD5E-4D0B-9CEE-845512518DEF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DepartmentTransfer"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{78071F41-8001-4DAC-A0F3-509EBD2641B3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD4B6A93-6CBF-4BDD-8ABE-6D60A69A1565}"
+      DTS:ObjectName="localhost\SQLEXPRESS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Application Name=SSIS-package1-{BD4B6A93-6CBF-4BDD-8ABE-6D60A69A1565}localhost\SQLEXPRESS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS.ITI]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1EE64921-BD96-4760-8E9B-EB1F62FEF224}"
+      DTS:ObjectName="localhost\SQLEXPRESS.ITI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-package1-{1EE64921-BD96-4760-8E9B-EB1F62FEF224}localhost\SQLEXPRESS.ITI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS.ITI 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{69B0584D-0713-4C00-88D6-32E8F3CED5D3}"
+      DTS:ObjectName="localhost\SQLEXPRESS.ITI 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DepartmentTransfer-{69B0584D-0713-4C00-88D6-32E8F3CED5D3}localhost\SQLEXPRESS.ITI 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS.ITI 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D2E241F6-16E5-443E-95C3-3BEC37EF8C8F}"
+      DTS:ObjectName="localhost\SQLEXPRESS.ITI 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=ITI;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DepartmentTransfer-{D2E241F6-16E5-443E-95C3-3BEC37EF8C8F}localhost\SQLEXPRESS.ITI 2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLEXPRESS.Test]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4ED6F595-645E-4FC5-A35F-8A5D00ED296C}"
+      DTS:ObjectName="localhost\SQLEXPRESS.Test">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=Test;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DepartmentTransfer-{4ED6F595-645E-4FC5-A35F-8A5D00ED296C}localhost\SQLEXPRESS.Test;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transfer Department Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{623D2418-2A95-471F-9BD2-A35F4C6E0A6E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer Department Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Transfer Department Data\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[OLE DB Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transfer Department Data\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\SQLEXPRESS.Test]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\SQLEXPRESS.Test]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dept_Id]"
+                      cachedDataType="i4"
+                      cachedName="Dept_Id"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Id]" />
+                    <inputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dept_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Dept_Name"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Name]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Name]" />
+                    <inputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dept_Desc]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Dept_Desc"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Desc]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Desc]" />
+                    <inputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dept_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Dept_Location"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Location]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Location]" />
+                    <inputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dept_Manager]"
+                      cachedDataType="i4"
+                      cachedName="Dept_Manager"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Manager]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Manager]" />
+                    <inputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Manager_hiredate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Manager_hiredate"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Manager_hiredate]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Manager_hiredate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Desc]"
+                      dataType="wstr"
+                      length="100"
+                      name="Dept_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Location]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dept_Manager]"
+                      dataType="i4"
+                      name="Dept_Manager" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Manager_hiredate]"
+                      dataType="wstr"
+                      length="10"
+                      name="Manager_hiredate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transfer Department Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transfer Department Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transfer Department Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transfer Department Data\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Department]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transfer Department Data\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\SQLEXPRESS.ITI 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\SQLEXPRESS.ITI 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Id]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Id]"
+                      name="Dept_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Name]"
+                      length="50"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Name]"
+                      name="Dept_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Desc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Desc]"
+                      length="100"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Desc]"
+                      name="Dept_Desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Location]"
+                      length="50"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Location]"
+                      name="Dept_Location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Manager]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Manager]"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Dept_Manager]"
+                      name="Dept_Manager"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Manager_hiredate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Manager_hiredate]"
+                      length="10"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].Columns[Manager_hiredate]"
+                      name="Manager_hiredate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Id]"
+                      dataType="i4"
+                      name="Dept_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Desc]"
+                      dataType="wstr"
+                      length="100"
+                      name="Dept_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Location]"
+                      dataType="wstr"
+                      length="50"
+                      name="Dept_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Dept_Manager]"
+                      dataType="i4"
+                      name="Dept_Manager" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Manager_hiredate]"
+                      dataType="wstr"
+                      length="10"
+                      name="Manager_hiredate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Id]"
+                      dataType="i4"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Id]"
+                      name="Dept_Id" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Name]"
+                      name="Dept_Name" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Desc]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Desc]"
+                      name="Dept_Desc" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Location]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Location]"
+                      name="Dept_Location" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Manager]"
+                      dataType="i4"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Dept_Manager]"
+                      name="Dept_Manager" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Manager_hiredate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Manager_hiredate]"
+                      name="Manager_hiredate" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transfer Department Data.Paths[OLE DB Source Output]"
+              endId="Package\Transfer Department Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Transfer Department Data\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Department Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Truncate Department Table to transfer data to test DB"
+      DTS:DTSID="{5D7BCA52-D6ED-4B34-B8B4-D0FFEB264F55}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Department Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4ED6F595-645E-4FC5-A35F-8A5D00ED296C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Department;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{04B4E115-886C-4DEE-AB69-67B0F05387AE}"
+      DTS:From="Package\Truncate Department Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transfer Department Data" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Truncate Department Table"
+          TopLeft="253.357143384766,101.852941092013" />
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\Transfer Department Data"
+          TopLeft="282.142857743465,228.647058623111" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="357.357143384766,143.452941092013">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.9857143586996,85.1941175310979"
+              Start="0,0"
+              End="25.9857143586996,77.6941175310979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.597058765549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.597058765549"
+                    Point2="0,42.597058765549"
+                    Point3="4,42.597058765549" />
+                  <mssgle:LineSegment
+                    End="21.9857143586996,42.597058765549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.9857143586996,42.597058765549"
+                    Point2="25.9857143586996,42.597058765549"
+                    Point3="25.9857143586996,46.597058765549" />
+                  <mssgle:LineSegment
+                    End="25.9857143586996,77.6941175310979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Transfer Department Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Transfer Department Data\OLE DB Source"
+          TopLeft="245.499996423721,92.499998703599" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Transfer Department Data\OLE DB Destination"
+          TopLeft="381.499994844198,218.499997273088" />
+        <EdgeLayout
+          Id="Package\Transfer Department Data.Paths[OLE DB Source Output]"
+          TopLeft="320.299996423721,134.099998703599">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.399998420477,84.3999985694886"
+              Start="0,0"
+              End="146.399998420477,76.8999985694886">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.1999992847443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.1999992847443"
+                    Point2="0,42.1999992847443"
+                    Point3="4,42.1999992847443" />
+                  <mssgle:LineSegment
+                    End="142.399998420477,42.1999992847443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="142.399998420477,42.1999992847443"
+                    Point2="146.399998420477,42.1999992847443"
+                    Point3="146.399998420477,46.1999992847443" />
+                  <mssgle:LineSegment
+                    End="146.399998420477,76.8999985694886" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transfer Department Data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transfer Department Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,4 @@
+1200,Photoshop,30,Design,photoshop
+1100,Win_XP,20,Operating System,win_xp
+700,Web Service,20,Web,web service
+100,HTML,20,Web,html

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>DataSourceForCube</DataSourceReference>
+      <CommandText>= SELECT 
+  {[Measures].[Total Sales], [Measures].[Quantity]} ON COLUMNS,
+  NON EMPTY ([Product].[ProductName].[ProductName].ALLMEMBERS) ON ROWS
+FROM [SalesCube]
+WHERE ([Time].[CalendarYear].&amp;[2022])</CommandText>
+    </Query>
+  </DataSet>
+</SharedDataSet>
